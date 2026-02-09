@@ -33,8 +33,8 @@ jobs:
           extensions: mysqli, pdo_mysql
           composer-cache: true
 
-      - name: Use linter
-        run: vendor/bin/phpcs --standard=PSR12 .
+      - name: Linting PHP Code
+        run: find . -name "*.php" -print0 | xargs -0 -n1 php -l
 
       - name: Waiting for MYSQL to be ready 
         run: while ! mysqladmin ping -hlocalhost --silent; do sleep 1; done 

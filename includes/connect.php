@@ -1,4 +1,8 @@
 <?php
+// Enable error reporting for debugging (Remove/Comment out for production once fixed)
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 $isProduction = !file_exists(__DIR__ . '/../docker-compose.yaml');
 
 if ($isProduction) {

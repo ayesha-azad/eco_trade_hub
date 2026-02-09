@@ -1,1 +1,45 @@
 name: CI/CD for PHP website
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  deploy-php-mysql:
+    runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:latest
+        ports:
+          - "3306:3306"
+        env:
+          MYSQL_ROOT_PASSWORD: mysecretpassword
+          MYSQL_DATABASE: mydatabase
+          MYSQL_USER: myuser
+          MYSQL_PASSWORD: mypassword
+        options: >-
+          --health-cmd="mysqladmin ping -h 127.0.0.1 --silent"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=3
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        
+      - name: Setup PHP with PECL extension
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: mysqli, pdo_mysql, mbstring, xml
+          composer-cache: true
+
+      - name: Install Dependencies
+        run: |
+          composer install --prefer-dist --no-progress  
+          composer require --dev squizlabs/php_codesniffer
+
+      - name: Use linter
+        run: vendor/bin/phpcs --standard=PSR12 .
+
+      - name: Waiting for MYSQL to be ready 
+        run: while ! mysqladmin ping -hlocalhost --silent; do sleep 1; done 

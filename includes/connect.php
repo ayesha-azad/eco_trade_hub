@@ -1,17 +1,23 @@
 <?php
-/**
- * Database Connection Configuration
- * Centralized database connection file for ECO Trade Hub
- * 
- * This file establishes a MySQL database connection using mysqli
- * and is included across all modules (admin, users, seller, etc.)
- */
+$isProduction = !file_exists(__DIR__ . '/../docker-compose.yaml');
 
-// Database configuration
-$servername = "mysql";      // MySQL service name from docker-compose
-$username = "myuser";       // Database username
-$password = "mypassword";   // Database password
-$database = "mydatabase";   // Database name
+if ($isProduction) {
+    // ===== INFINITYFREE PRODUCTION SETTINGS =====
+    // TODO: Update these with your actual InfinityFree database credentials
+    // You can find these in your InfinityFree Control Panel → MySQL Databases
+    
+    $servername = "sql209.infinityfree.com";  // Your MySQL hostname (e.g., sql123.infinityfree.com)
+    $username = "if0_41113413";              // Your MySQL username (starts with epiz_ or if0_)
+    $password = "tGQKUBmiL5weRO";           // Your MySQL password
+    $database = "if0_41113413_eco_trade_hub";     // Your database name
+    
+} else {
+    // ===== LOCAL DOCKER DEVELOPMENT SETTINGS =====
+    $servername = "mysql";      // MySQL service name from docker-compose
+    $username = "myuser";       // Database username
+    $password = "mypassword";   // Database password
+    $database = "mydatabase";   // Database name
+}
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $database);

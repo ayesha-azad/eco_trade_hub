@@ -1,0 +1,120 @@
+body{
+    padding-top: 80px;
+}
+
+.bg-dark {
+    --bs-bg-opacity: 1;
+    background-color: #0A1F44 !important;
+}
+
+.navbar-brand img {
+    max-width: 100%;
+    height: auto;
+}
+
+footer{
+    background: linear-gradient(90deg, #0A1F44 0%, #D9EFFF 100%);
+}
+
+.main-body{
+    min-height: 87vh;
+}
+
+.upper-nav{
+    border-bottom: 2px solid white;
+}
+
+.admin-image{
+    width: 100px;
+    object-fit: contain;
+}
+
+.btn-panel{
+    background-color: #0A1F44;
+}
+
+.btn-panel:hover{
+    background-color: #7d0606;
+    color: white;
+}
+
+button{
+    border: none;
+}
+
+.edit-img{
+    width: 20%;
+    height: 20%;
+    object-fit: contain;
+}
+
+.seller-image{
+    width: 100px;
+    object-fit: contain;
+}
+
+.product-img{
+    width: 100px;
+    object-fit: contain;
+}
+
+.row {
+    margin: 0; /* Remove row margins */
+}
+
+.col-lg-2, .col-lg-10, .col-lg-9{ 
+    padding: 0; /* Remove column padding */
+}
+
+.container{
+    padding: 0;
+}
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-messages {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-bottom: 1rem; /* Adjust as needed for spacing */
+}
+
+.message-sender {
+    background-color: #d1e7dd; /* Light green */
+    color: #0f5132;
+    padding: 8px;
+    border-radius: 8px;
+    text-align: right;
+    margin: 5px 0;
+}
+
+.message-receiver {
+    background-color: #d3d3d3; 
+    color: black;
+    padding: 8px;
+    border-radius: 8px;
+    text-align: left;
+    margin: 5px 0;
+}
+
+.chat-form {
+    position: sticky;
+    bottom: 0;
+    padding: 0.5rem;
+    z-index: 10;
+}
+
+
+.btn-chat{
+    border: none;
+    margin: none;
+    padding: none;
+    background-color: transparent;
+}
+
+.btn-chat-submit{
+    font-size: 2.3rem;
+    color: #0A1F44;
+}

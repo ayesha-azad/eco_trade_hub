@@ -1,0 +1,74 @@
+body{
+    padding-top: 80px;
+}
+
+.bg-dark {
+    --bs-bg-opacity: 1;
+    background-color: #0A1F44 !important;
+}
+
+.navbar-brand img {
+    max-width: 100%;
+    height: auto;
+}
+
+footer{
+    background: linear-gradient(90deg, #0A1F44 0%, #D9EFFF 100%);
+}
+
+.main-body{
+    min-height: 87vh;
+}
+
+.upper-nav{
+    border-bottom: 2px solid white;
+}
+
+.admin-image{
+    width: 100px;
+    object-fit: contain;
+}
+
+.btn-panel{
+    background-color: #0A1F44;
+}
+
+.btn-panel:hover{
+    background-color: #7d0606;
+    color: white;
+}
+
+button{
+    border: none;
+}
+
+.product-img{
+    width: 100px;
+    object-fit: contain;
+}
+
+.edit-img{
+    width: 20%;
+    height: 20%;
+    object-fit: contain;
+}
+
+td, th{
+    vertical-align: middle;
+}
+
+.admin-image{
+    width: 100px;
+    object-fit: contain;
+}
+
+.btn-general{
+    background-color: #0A1F44;
+    color: white;
+}
+
+.btn-general:hover{
+    background-color: #7d0606;
+    color: white;
+}
+

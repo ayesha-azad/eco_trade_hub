@@ -1,0 +1,43 @@
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    depends_on:
+      - php
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - eco-trade-data:/var/www/html
+    networks:
+      - eco-trade-net
+
+  php:
+    build:
+      context: .
+    volumes:
+      - eco-trade-data:/var/www/html
+    networks:
+      - eco-trade-net
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:latest
+    ports:
+      - "3900:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: mysecretpassword
+      MYSQL_DATABASE: mydatabase
+      MYSQL_USER: myuser
+      MYSQL_PASSWORD: mypassword
+    volumes:
+      - eco-trade-mysql-data:/var/lib/mysql
+    networks:
+      - eco-trade-net
+
+volumes:
+  eco-trade-data:
+  eco-trade-mysql-data:
+
+networks:
+  eco-trade-net:

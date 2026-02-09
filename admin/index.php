@@ -1,6 +1,6 @@
 <?php 
-include("../includes/connect.php");
-include("../functions/common_functions.php");
+include(__DIR__ . "/../includes/connect.php");
+include(__DIR__ . "/../functions/common_functions.php");
 session_start();
 if(!isset($_SESSION['admin_email'])){
    header("location:../login.php?admin_login");

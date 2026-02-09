@@ -1,6 +1,6 @@
 <?php 
-include("../includes/connect.php");
-include("../functions/common_functions.php");
+include(__DIR__ . "/../includes/connect.php");
+include(__DIR__ . "/../functions/common_functions.php");
 session_start();
 if(!isset($_SESSION['username'])){
   header("location:../login.php");
@@ -104,7 +104,7 @@ if(!isset($_SESSION['username'])){
         </li>
         
         <li class="nav-item">
-          <a class="nav-link" href="chat.php">Chat with Sellers <i class="fa-solid fa-comments text-light"></i></a>
+          <a class="nav-link" href="messages.php">Chat with Sellers <i class="fa-solid fa-comments text-light"></i></a>
         </li>
 
       </ul>

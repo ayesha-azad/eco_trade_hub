@@ -46,7 +46,7 @@ if(!isset($_SESSION['sellername'])){
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="chat.php">Chat with Buyers <i class="fa-solid fa-comments text-light"></i></a>
+          <a class="nav-link" href="messages.php">Chat with Buyers <i class="fa-solid fa-comments text-light"></i></a>
         </li>
         
       </ul>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("../../includes/connect.php");
+include(__DIR__ . "/../../includes/connect.php");
 
 if (!isset($_SESSION['sellername'])) {
     exit("You are not logged in");

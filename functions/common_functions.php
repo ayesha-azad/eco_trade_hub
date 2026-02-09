@@ -1,5 +1,5 @@
 <?php 
-include("./includes/connect.php");
+include(__DIR__ . "/../includes/connect.php");
 
 //displaying products on main page
 

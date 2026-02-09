@@ -1,6 +1,6 @@
 <?php 
-include("../includes/connect.php");
-include("../functions/common_functions.php");
+include(__DIR__ . "/../includes/connect.php");
+include(__DIR__ . "/../functions/common_functions.php");
 session_start();
 if(!isset($_SESSION['username'])){
   header("location:../login.php");
@@ -103,7 +103,7 @@ if(!isset($_SESSION['username'])){
         </li>
         
         <li class="nav-item">
-            <a class="nav-link active" href="chat.php">Chat with Sellers <i class="fa-solid fa-comments text-light"></i></a>
+            <a class="nav-link active" href="messages.php">Chat with Sellers <i class="fa-solid fa-comments text-light"></i></a>
         </li>
 
       </ul>
@@ -143,7 +143,7 @@ if(!isset($_SESSION['username'])){
                     ?>
                 
                     <li class="pt-3 text-center" style="list-style-type: none">
-                        <a href="chat.php?chat_with_sellers=<?php echo urlencode($seller_email); ?>&seller_name=<?php echo urlencode($sellername); ?>" class="text-light text-decoration-none">
+                        <a href="messages.php?chat_with_sellers=<?php echo urlencode($seller_email); ?>&seller_name=<?php echo urlencode($sellername); ?>" class="text-light text-decoration-none">
                             <?php echo htmlspecialchars($sellername); ?>
                         </a>
                     </li>

@@ -1,6 +1,6 @@
 <?php
 
-include("../includes/connect.php");
+include(__DIR__ . "/../includes/connect.php");
 session_start();
 if(!isset($_SESSION['sellername'])){
   header("location:../login.php?seller_login");
@@ -51,7 +51,7 @@ if(!isset($_SESSION['sellername'])){
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="chat.php">Chat with Buyers <i class="fa-solid fa-comments text-light"></i></a>
+          <a class="nav-link" href="messages.php">Chat with Buyers <i class="fa-solid fa-comments text-light"></i></a>
         </li>
         
       </ul>

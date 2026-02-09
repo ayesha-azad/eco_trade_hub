@@ -1,5 +1,5 @@
 <?php 
-include("includes/connect.php");
+include("../includes/connect.php");
 include("../functions/common_functions.php");
 session_start();
 if(!isset($_SESSION['username'])){

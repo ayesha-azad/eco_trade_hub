@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("includes/connect.php");
+include("../includes/connect.php");
 
 if (!isset($_SESSION['username'])) {
     exit("You are not logged in");

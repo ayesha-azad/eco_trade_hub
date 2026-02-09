@@ -135,5 +135,5 @@ if(!isset($_SESSION['sellername'])){
 
 
 <?php 
-include("../includes/footer.php")
+include(__DIR__ . "/../includes/footer.php");
 ?>

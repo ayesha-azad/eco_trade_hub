@@ -202,5 +202,5 @@ if (isset($_POST['confirm_payment'])) {
 </div>
 
 <?php
-include("../includes/footer.php");
+include(__DIR__ . "/../includes/footer.php");
 ?>

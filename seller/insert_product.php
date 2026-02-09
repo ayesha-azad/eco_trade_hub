@@ -240,5 +240,5 @@ if(isset($_POST['insert_product'])){
 
 <script src="../includes/formValid.js"></script>
 <?php 
-include("../includes/footer.php")
+include(__DIR__ . "/../includes/footer.php");
 ?>
